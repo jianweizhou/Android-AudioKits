@@ -11,9 +11,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btn_codec_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="codec_info"
+        android:onClick="onClick"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_audio_demux"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_audio_demux"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="audio_demux"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_codec_info"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_decode_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="decode_audio"
+        android:onClick="onClick"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintEnd_toStartOf="@+id/btn_encode_audio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_codec_info" />
+
+    <Button
+        android:id="@+id/btn_encode_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="encode_audio"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_decode_audio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_codec_info" />
 
 </android.support.constraint.ConstraintLayout>
